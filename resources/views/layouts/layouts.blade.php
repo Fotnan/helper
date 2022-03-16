@@ -170,11 +170,8 @@
         <div class="sidebar">
             <!-- Sidebar user (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
-                    <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                </div>
                 <div class="info">
-                    <a href="#" class="d-block">Alexander Pierce</a>
+                    <a href="{{ route('profile.show') }}" class="d-block">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
                 </div>
             </div>
 
@@ -214,6 +211,35 @@
                                 <a href="{{route('admin.invoices')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Счета</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('contacts.index')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Контактные лица</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('comment-form')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Вопросы, сообщения</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Административная
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('excel')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Обновить базу счетов</p>
                                 </a>
                             </li>
                             <li class="nav-item">
